@@ -1,0 +1,117 @@
+[
+  {
+    "school": "高雄中學",
+    "city": "高雄市",
+    "expected_score": 30
+  },
+  {
+    "school": "高雄女中",
+    "city": "高雄市",
+    "expected_score": 30
+  },
+  {
+    "school": "師大附中",
+    "city": "高雄市",
+    "expected_score": 30
+  },
+  {
+    "school": "鳳山高中",
+    "city": "高雄市",
+    "expected_score": 28
+  },
+  {
+    "school": "新莊高中",
+    "city": "高雄市",
+    "expected_score": 26
+  },
+  {
+    "school": "鳯新高中",
+    "city": "高雄市",
+    "expected_score": 26
+  },
+  {
+    "school": "中正高中",
+    "city": "高雄市",
+    "expected_score": 26
+  },
+  {
+    "school": "瑞祥高中",
+    "city": "高雄市",
+    "expected_score": 24
+  },
+  {
+    "school": "中山附中",
+    "city": "高雄市",
+    "expected_score": 24
+  },
+  {
+    "school": "新興高中",
+    "city": "高雄市",
+    "expected_score": 24
+  },
+  {
+    "school": "三民高中",
+    "city": "高雄市",
+    "expected_score": 22
+  },
+  {
+    "school": "前鎮高中",
+    "city": "高雄市",
+    "expected_score": 22
+  },
+  {
+    "school": "福誠高中",
+    "city": "高雄市",
+    "expected_score": 22
+  },
+  {
+    "school": "文山高中",
+    "city": "高雄市",
+    "expected_score": 22
+  },
+  {
+    "school": "高雄高商",
+    "city": "高雄市",
+    "expected_score": 22
+  },
+  {
+    "school": "中山高中",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "左營高中",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "鼓山高中",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "小港高中",
+    "city": "高雄市",
+    "expected_score": 18
+  },
+  {
+    "school": "楠梓高中",
+    "city": "高雄市",
+    "expected_score": 18
+  },
+  {
+    "school": "岡山高中",
+    "city": "高雄市",
+    "expected_score": 18
+  },
+  {
+    "school": "仁武高中",
+    "city": "高雄市",
+    "expected_score": 18
+  },
+  {
+    "school": "林園高中",
+    "city": "高雄市",
+    "expected_score": 18
+  }
+]

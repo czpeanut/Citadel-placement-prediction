@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>升高中落點分析</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>升高中落點分析系統</h1>
+
+    <form id="score-form">
+      <div class="form-group">
+        <label>國文：</label>
+        <select id="chinese">
+          <option value="2">Ｃ</option>
+          <option value="4">Ｂ / Ｂ＋ / Ｂ＋＋</option>
+          <option value="6">Ａ / Ａ＋ / Ａ＋＋</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>英文：</label>
+        <select id="english">
+          <option value="2">Ｃ</option>
+          <option value="4">Ｂ / Ｂ＋ / Ｂ＋＋</option>
+          <option value="6">Ａ / Ａ＋ / Ａ＋＋</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>數學：</label>
+        <select id="math">
+          <option value="2">Ｃ</option>
+          <option value="4">Ｂ / Ｂ＋ / Ｂ＋＋</option>
+          <option value="6">Ａ / Ａ＋ / Ａ＋＋</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>自然：</label>
+        <select id="science">
+          <option value="2">Ｃ</option>
+          <option value="4">Ｂ / Ｂ＋ / Ｂ＋＋</option>
+          <option value="6">Ａ / Ａ＋ / Ａ＋＋</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>社會：</label>
+        <select id="social">
+          <option value="2">Ｃ</option>
+          <option value="4">Ｂ / Ｂ＋ / Ｂ＋＋</option>
+          <option value="6">Ａ / Ａ＋ / Ａ＋＋</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>選擇縣市：</label>
+        <select id="city">
+          <option value="">--請選擇--</option>
+          <option value="台北市">台北市</option>
+          <option value="新北市">新北市</option>
+          <option value="桃園市">桃園市</option>
+          <option value="台中市">台中市</option>
+          <option value="台南市">台南市</option>
+          <option value="高雄市">高雄市</option>
+        </select>
+      </div>
+      <button type="submit">開始分析</button>
+    </form>
+
+    <div id="result">
+      <h2>分析結果</h2>
+      <div class="result-section" id="safe">
+        <h3>✅ 安全學校</h3>
+        <ul></ul>
+      </div>
+      <div class="result-section" id="risky">
+        <h3>⚠️ 有風險</h3>
+        <ul></ul>
+      </div>
+      <div class="result-section" id="danger">
+        <h3>❌ 危險</h3>
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
