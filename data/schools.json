@@ -1,182 +1,59 @@
 [
-  {
-    "school": "高雄高中",
-    "city": "高雄市",
-    "expected_score": 30
-  },
-  {
-    "school": "高雄女中",
-    "city": "高雄市",
-    "expected_score": 30
-  },
-  {
-    "school": "高師大附中",
-    "city": "高雄市",
-    "expected_score": 30
-  },
-  {
-    "school": "鳳山高中",
-    "city": "高雄市",
-    "expected_score": 28
-  },
-  {
-    "school": "新莊高中",
-    "city": "高雄市",
-    "expected_score": 26
-  },
-  {
-    "school": "鳯新高中",
-    "city": "高雄市",
-    "expected_score": 26
-  },
-  {
-    "school": "中正高中",
-    "city": "高雄市",
-    "expected_score": 24
-  },
-  {
-    "school": "瑞祥高中",
-    "city": "高雄市",
-    "expected_score": 24
-  },
-  {
-    "school": "中山附中",
-    "city": "高雄市",
-    "expected_score": 24
-  },
-  {
-    "school": "新興高中",
-    "city": "高雄市",
-    "expected_score": 24
-  },
-  {
-    "school": "三民高中",
-    "city": "高雄市",
-    "expected_score": 22
-  },
-  {
-    "school": "前鎮高中",
-    "city": "高雄市",
-    "expected_score": 22
-  },
-  {
-    "school": "福誠高中",
-    "city": "高雄市",
-    "expected_score": 22
-  },
-  {
-    "school": "文山高中",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "中山高中",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "左營高中",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "鼓山高中",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "小港高中",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "楠梓高中",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "岡山高中",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "仁武高中",
-    "city": "高雄市",
-    "expected_score": 18
-  },
-  {
-    "school": "林園高中",
-    "city": "高雄市",
-    "expected_score": 18
-  },
-  {
-    "school": "高雄高工－機械",
-    "city": "高雄市",
-    "expected_score": 22
-  },
-  {
-    "school": "高雄高工－電機",
-    "city": "高雄市",
-    "expected_score": 22
-  },
-  {
-    "school": "高雄高工－化工",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "高雄高工－冷凍空調",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "高雄高工－汽車",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "高雄高工－建築",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "中正高工－化工",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "中正高工－金工",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "中正商工－金工",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "高雄高商－廣告設計",
-    "city": "高雄市",
-    "expected_score": 22
-  },
-  {
-    "school": "高雄高商－國際貿易",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "高雄高商－會計事務",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "高雄高商－資料處理",
-    "city": "高雄市",
-    "expected_score": 20
-  },
-  {
-    "school": "港明中學",
-    "city": "台南市",
-    "expected_score": 18
-  }
+  { "school": "高雄高中", "city": "高雄市", "expected_score": 30 },
+  { "school": "高雄女中", "city": "高雄市", "expected_score": 30 },
+  { "school": "高師大附中", "city": "高雄市", "expected_score": 30 },
+  { "school": "鳳山高中", "city": "高雄市", "expected_score": 28 },
+  { "school": "新莊高中", "city": "高雄市", "expected_score": 26 },
+  { "school": "鳯新高中", "city": "高雄市", "expected_score": 26 },
+  { "school": "中正高中", "city": "高雄市", "expected_score": 24 },
+  { "school": "瑞祥高中", "city": "高雄市", "expected_score": 24 },
+  { "school": "中山附中", "city": "高雄市", "expected_score": 24 },
+  { "school": "新興高中", "city": "高雄市", "expected_score": 24 },
+  { "school": "三民高中", "city": "高雄市", "expected_score": 22 },
+  { "school": "前鎮高中", "city": "高雄市", "expected_score": 22 },
+  { "school": "福誠高中", "city": "高雄市", "expected_score": 22 },
+  { "school": "文山高中", "city": "高雄市", "expected_score": 20 },
+  { "school": "中山高中", "city": "高雄市", "expected_score": 20 },
+  { "school": "左營高中", "city": "高雄市", "expected_score": 20 },
+  { "school": "鼓山高中", "city": "高雄市", "expected_score": 20 },
+  { "school": "小港高中", "city": "高雄市", "expected_score": 20 },
+  { "school": "楠梓高中", "city": "高雄市", "expected_score": 20 },
+  { "school": "岡山高中", "city": "高雄市", "expected_score": 20 },
+  { "school": "仁武高中", "city": "高雄市", "expected_score": 18 },
+  { "school": "林園高中", "city": "高雄市", "expected_score": 18 },
+  { "school": "高雄高工－機械", "city": "高雄市", "expected_score": 22 },
+  { "school": "高雄高工－電機", "city": "高雄市", "expected_score": 22 },
+  { "school": "高雄高工－化工", "city": "高雄市", "expected_score": 20 },
+  { "school": "高雄高工－冷凍空調", "city": "高雄市", "expected_score": 20 },
+  { "school": "高雄高工－汽車", "city": "高雄市", "expected_score": 20 },
+  { "school": "高雄高工－建築", "city": "高雄市", "expected_score": 20 },
+  { "school": "中正高工－化工", "city": "高雄市", "expected_score": 20 },
+  { "school": "中正高工－金工", "city": "高雄市", "expected_score": 20 },
+  { "school": "中正商工－金工", "city": "高雄市", "expected_score": 20 },
+  { "school": "高雄高商－廣告設計", "city": "高雄市", "expected_score": 22 },
+  { "school": "高雄高商－國際貿易", "city": "高雄市", "expected_score": 20 },
+  { "school": "高雄高商－會計事務", "city": "高雄市", "expected_score": 20 },
+  { "school": "高雄高商－資料處理", "city": "高雄市", "expected_score": 20 },
+  { "school": "臺南一中", "city": "台南市", "expected_score": 29.4 },
+  { "school": "臺南女中", "city": "台南市", "expected_score": 27.6 },
+  { "school": "南科實驗高中", "city": "台南市", "expected_score": 27.6 },
+  { "school": "家齊高中(男)", "city": "台南市", "expected_score": 26.6 },
+  { "school": "家齊高中(女)", "city": "台南市", "expected_score": 23.8 },
+  { "school": "新營高中", "city": "台南市", "expected_score": 23.6 },
+  { "school": "臺南二中", "city": "台南市", "expected_score": 23.6 },
+  { "school": "大灣高中", "city": "台南市", "expected_score": 21.6 },
+  { "school": "南大附中－普通高中部", "city": "台南市", "expected_score": 21.6 },
+  { "school": "南大附中－綜合高中部", "city": "台南市", "expected_score": 18.6 },
+  { "school": "德光中學", "city": "台南市", "expected_score": 20.6 },
+  { "school": "港明中學", "city": "台南市", "expected_score": 18 },
+  { "school": "永仁高中", "city": "台南市", "expected_score": 17.6 },
+  { "school": "新化高中", "city": "台南市", "expected_score": 16.6 },
+  { "school": "南寧高中", "city": "台南市", "expected_score": 14.6 },
+  { "school": "土城高中", "city": "台南市", "expected_score": 14.6 },
+  { "school": "聖功女中", "city": "台南市", "expected_score": 13.6 },
+  { "school": "北門高中", "city": "台南市", "expected_score": 13.6 },
+  { "school": "善化高中", "city": "台南市", "expected_score": 12.4 },
+  { "school": "曾文農工－普通科", "city": "台南市", "expected_score": 10.2 },
+  { "school": "後壁高中", "city": "台南市", "expected_score": 10.2 },
+  { "school": "玉井工商－普通科", "city": "台南市", "expected_score": 10.2 }
 ]
