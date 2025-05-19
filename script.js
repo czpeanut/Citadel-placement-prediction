@@ -7,13 +7,11 @@ document.getElementById("score-form").addEventListener("submit", async function 
     return;
   }
 
-  // 成績轉換表（五科）
   const gradeValue = {
     "台南市": { "C": 1, "B": 2, "B+": 3, "B++": 4, "A": 5, "A+": 6, "A++": 7 },
     "高雄市": { "C": 2, "B": 4, "B+": 4, "B++": 4, "A": 6, "A+": 6, "A++": 6 }
   };
 
-  // 作文加分表（僅台南市使用）
   const writingScoreMap = {
     "6": 1.0,
     "5": 0.8,
@@ -34,13 +32,12 @@ document.getElementById("score-form").addEventListener("submit", async function 
     scoreMap[getGrade("science")] +
     scoreMap[getGrade("social")];
 
-  // 台南市加作文加權
   if (city === "台南市") {
     const writingGrade = getGrade("writing");
     total += writingScoreMap[writingGrade];
   }
 
-  // 清空原結果
+  // 清空舊結果
   ["safe", "risky", "danger"].forEach((id) => {
     document.querySelector(`#${id} ul`).innerHTML = "";
   });
@@ -59,6 +56,10 @@ document.getElementById("score-form").addEventListener("submit", async function 
 
   filtered.forEach((school) => {
     const diff = total - school.expected_score;
+
+    // 預估錄取分數高於考生超過3分 → 不顯示
+    if (diff < -3) return;
+
     const li = document.createElement("li");
     li.textContent = `${school.school}（預估錄取：${school.expected_score}分）`;
 
