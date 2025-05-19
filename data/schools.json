@@ -1,6 +1,6 @@
 [
   {
-    "school": "高雄中學",
+    "school": "高雄高中",
     "city": "高雄市",
     "expected_score": 30
   },
@@ -10,7 +10,7 @@
     "expected_score": 30
   },
   {
-    "school": "師大附中",
+    "school": "高師大附中",
     "city": "高雄市",
     "expected_score": 30
   },
@@ -32,7 +32,7 @@
   {
     "school": "中正高中",
     "city": "高雄市",
-    "expected_score": 26
+    "expected_score": 24
   },
   {
     "school": "瑞祥高中",
@@ -67,12 +67,7 @@
   {
     "school": "文山高中",
     "city": "高雄市",
-    "expected_score": 22
-  },
-  {
-    "school": "高雄高商",
-    "city": "高雄市",
-    "expected_score": 22
+    "expected_score": 20
   },
   {
     "school": "中山高中",
@@ -92,17 +87,17 @@
   {
     "school": "小港高中",
     "city": "高雄市",
-    "expected_score": 18
+    "expected_score": 20
   },
   {
     "school": "楠梓高中",
     "city": "高雄市",
-    "expected_score": 18
+    "expected_score": 20
   },
   {
     "school": "岡山高中",
     "city": "高雄市",
-    "expected_score": 18
+    "expected_score": 20
   },
   {
     "school": "仁武高中",
@@ -112,6 +107,76 @@
   {
     "school": "林園高中",
     "city": "高雄市",
+    "expected_score": 18
+  },
+  {
+    "school": "高雄高工－機械",
+    "city": "高雄市",
+    "expected_score": 22
+  },
+  {
+    "school": "高雄高工－電機",
+    "city": "高雄市",
+    "expected_score": 22
+  },
+  {
+    "school": "高雄高工－化工",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "高雄高工－冷凍空調",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "高雄高工－汽車",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "高雄高工－建築",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "中正高工－化工",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "中正高工－金工",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "中正商工－金工",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "高雄高商－廣告設計",
+    "city": "高雄市",
+    "expected_score": 22
+  },
+  {
+    "school": "高雄高商－國際貿易",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "高雄高商－會計事務",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "高雄高商－資料處理",
+    "city": "高雄市",
+    "expected_score": 20
+  },
+  {
+    "school": "港明中學",
+    "city": "台南市",
     "expected_score": 18
   }
 ]
