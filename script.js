@@ -80,7 +80,7 @@ document.getElementById("score-form").addEventListener("submit", async function 
     if (diff < -3) return;
 
     const li = document.createElement("li");
-    li.textContent = `${school.school}（預估錄取：${school.expected_score}分）`;
+    li.textContent = `${school.school}`;
 
     if (diff >= 3) {
       document.querySelector("#safe ul").appendChild(li);
