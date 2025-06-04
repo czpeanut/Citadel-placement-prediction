@@ -10,9 +10,12 @@ document.getElementById("score-form").addEventListener("submit", async function 
   };
 
   const writingValue = {
-    "台南市": { 6: 1, 5: 0.8, 4: 0.6, 3: 0.4, 2: 0.2, 1: 0.1, 0: 0 },
-    "屏東市": { 6: 1, 5: 1, 4: 0.5, 3: 0.5, 2: 0, 1: 0, 0: 0 }
-  };
+  "台南市": { 6: 1, 5: 0.8, 4: 0.6, 3: 0.4, 2: 0.2, 1: 0.1, 0: 0 },
+  "屏東市": { 6: 1, 5: 1, 4: 0.5, 3: 0.5, 2: 0, 1: 0, 0: 0 },
+  "高雄市": { 6: 1, 5: 0.8, 4: 0.6, 3: 0.4, 2: 0.2, 1: 0.1, 0: 0 },
+  "台中市": { 6: 1, 5: 0.8, 4: 0.6, 3: 0.4, 2: 0.2, 1: 0.1, 0: 0 },
+  "宜蘭市": { 6: 1, 5: 0.8, 4: 0.6, 3: 0.4, 2: 0.2, 1: 0.1, 0: 0 } // 如果也要支援宜蘭
+};
 
   const getGrade = (id) => document.getElementById(id).value;
   const city = document.getElementById("city").value;
