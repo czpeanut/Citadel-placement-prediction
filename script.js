@@ -42,10 +42,9 @@ document.getElementById("score-form").addEventListener("submit", async function 
     document.querySelector(`#${id} ul`).innerHTML = "";
   });
 
-  // 載入學校資料
   let schools;
   try {
-    const res = await fetch("data/schools.json");
+    const res = await fetch("schools.json");
     schools = await res.json();
   } catch (err) {
     alert("無法載入學校資料");
@@ -75,10 +74,10 @@ document.getElementById("score-form").addEventListener("submit", async function 
     }
   });
 
-  // 顯示分析結果區塊
+  // 顯示結果
   document.getElementById("result").style.display = "block";
 
-  // 傳送至 Google 表單
+  // 傳送 Google 表單
   const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSde06ipoJ13R9ScEkmzZcqxuo-FfH7ZvvYbO3F12GF_J13sow/formResponse";
   const formData = new FormData();
   formData.append("entry.1443068889", name);
