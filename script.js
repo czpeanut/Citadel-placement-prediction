@@ -25,16 +25,17 @@ document.getElementById("score-form").addEventListener("submit", async function 
   }
 
   const scoreMap = gradeValue[city];
-  const writing = parseInt(getGrade("writing"));
+  const writingScore = writingValue[city]?.[parseInt(getGrade("writing"))] ?? 0;
+
   const total =
     scoreMap[getGrade("chinese")] +
     scoreMap[getGrade("english")] +
     scoreMap[getGrade("math")] +
     scoreMap[getGrade("science")] +
     scoreMap[getGrade("social")] +
-    (writingValue[city]?.[writing] ?? 0);
+    writingScore;
 
-  // 清除舊結果
+  // 清空舊結果
   ["safe", "risky", "danger"].forEach((id) => {
     document.querySelector(`#${id} ul`).innerHTML = "";
   });
@@ -58,7 +59,7 @@ document.getElementById("score-form").addEventListener("submit", async function 
   filtered.forEach((school) => {
     const diff = total - school.expected_score;
     const li = document.createElement("li");
-    li.textContent = `${school.school}（預估：${school.expected_score}）`;
+    li.textContent = school.school;
 
     if (diff >= 3) {
       document.querySelector("#safe ul").appendChild(li);
@@ -72,10 +73,10 @@ document.getElementById("score-form").addEventListener("submit", async function 
     }
   });
 
-  // 顯示分析結果區塊
+  // 顯示結果區塊
   document.getElementById("result").style.display = "block";
 
-  // 傳送至 Google 表單
+  // 上傳 Google 表單
   const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSde06ipoJ13R9ScEkmzZcqxuo-FfH7ZvvYbO3F12GF_J13sow/formResponse";
   const formData = new FormData();
   formData.append("entry.1443068889", name);
@@ -85,7 +86,7 @@ document.getElementById("score-form").addEventListener("submit", async function 
   formData.append("entry.1358965558", getGrade("math"));
   formData.append("entry.1044822364", getGrade("science"));
   formData.append("entry.630863529", getGrade("social"));
-  formData.append("entry.523532941", writing);
+  formData.append("entry.523532941", getGrade("writing"));
   formData.append("entry.1905645741", city);
   formData.append("entry.1640508304", safeList.join(", "));
   formData.append("entry.1852642474", riskyList.join(", "));
