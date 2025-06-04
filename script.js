@@ -52,28 +52,45 @@ document.getElementById("score-form").addEventListener("submit", async function 
 
   const filtered = schools.filter((s) => s.city === city);
 
+  // 判斷是否為全A++ + 作文6分
+  const isPerfect =
+    getGrade("chinese") === "A++" &&
+    getGrade("english") === "A++" &&
+    getGrade("math") === "A++" &&
+    getGrade("science") === "A++" &&
+    getGrade("social") === "A++" &&
+    parseInt(getGrade("writing")) === 6;
+
   const safeList = [];
   const riskyList = [];
   const dangerList = [];
 
-  filtered.forEach((school) => {
-    const diff = total - school.expected_score;
-    const li = document.createElement("li");
-    li.textContent = school.school;
-
-    if (diff >= 3) {
+  if (isPerfect) {
+    filtered.forEach((school) => {
+      const li = document.createElement("li");
+      li.textContent = school.school;
       document.querySelector("#safe ul").appendChild(li);
       safeList.push(school.school);
-    } else if (diff >= 0) {
-      document.querySelector("#risky ul").appendChild(li);
-      riskyList.push(school.school);
-    } else if (diff > -3) {
-      document.querySelector("#danger ul").appendChild(li);
-      dangerList.push(school.school);
-    }
-  });
+    });
+  } else {
+    filtered.forEach((school) => {
+      const diff = total - school.expected_score;
+      const li = document.createElement("li");
+      li.textContent = school.school;
 
-  // 顯示結果區塊
+      if (diff >= 3) {
+        document.querySelector("#safe ul").appendChild(li);
+        safeList.push(school.school);
+      } else if (diff >= 0) {
+        document.querySelector("#risky ul").appendChild(li);
+        riskyList.push(school.school);
+      } else if (diff > -3) {
+        document.querySelector("#danger ul").appendChild(li);
+        dangerList.push(school.school);
+      }
+    });
+  }
+
   document.getElementById("result").style.display = "block";
 
   // 上傳 Google 表單
