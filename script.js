@@ -1,93 +1,73 @@
-document.getElementById("score-form").addEventListener("submit", async function (e) {
+// script.js
+
+document.getElementById("score-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
+  const name = document.getElementById("student-name").value.trim();
+  const phone = document.getElementById("contact-phone").value.trim();
+  const chinese = document.getElementById("chinese").value;
+  const english = document.getElementById("english").value;
+  const math = document.getElementById("math").value;
+  const science = document.getElementById("science").value;
+  const social = document.getElementById("social").value;
+  const writing = parseInt(document.getElementById("writing").value);
   const city = document.getElementById("city").value;
-  if (!city) {
-    alert("請選擇縣市");
+
+  if (!name || !phone || !city) {
+    alert("請填寫所有欄位");
     return;
   }
 
-  // 各縣市五科等級對應分數
-  const gradeValueMap = {
-    "高雄市": { "C": 2, "B": 4, "B+": 4, "B++": 4, "A": 6, "A+": 6, "A++": 6 },
-    "台南市": { "C": 1, "B": 2, "B+": 3, "B++": 4, "A": 5, "A+": 6, "A++": 7 },
-    "台中市": { "C": 2, "B": 4, "B+": 4, "B++": 4, "A": 6, "A+": 6, "A++": 6 },
-    "宜蘭市": { "C": 1, "B": 2, "B+": 2.3, "B++": 2.6, "A": 3, "A+": 3, "A++": 3 },
-    "屏東市": { "C": 1, "B": 3, "B+": 3.5, "B++": 4, "A": 5, "A+": 5, "A++": 5 }
+  const scores = { chinese, english, math, science, social };
+
+  const cityRules = {
+    "台南市": { C: 1, B: 2, "B+": 3, "B++": 4, A: 5, "A+": 6, "A++": 7, writing: [0, 0.1, 0.2, 0.4, 0.6, 0.8, 1] },
+    "高雄市": { C: 2, B: 4, "B+": 4, "B++": 4, A: 6, "A+": 6, "A++": 6, writing: [0, 0, 0, 0, 0, 0, 0] },
+    "台中市": { C: 2, B: 4, "B+": 4, "B++": 4, A: 6, "A+": 6, "A++": 6, writing: [0, 0, 0, 0, 0, 0, 0] },
+    "宜蘭市": { C: 1, B: 2, "B+": 2.3, "B++": 2.6, A: 3, "A+": 3, "A++": 3, writing: [0, 0, 0, 0, 0, 0, 0] },
+    "屏東市": { C: 1, B: 3, "B+": 3.5, "B++": 4, A: 5, "A+": 5, "A++": 5, writing: [0, 0, 0.5, 0.5, 1, 1, 0] }
   };
 
-  // 作文加分規則（適用台南市與屏東市）
-  const writingBonusMap = {
-    "台南市": {
-      "6": 1.0,
-      "5": 0.8,
-      "4": 0.6,
-      "3": 0.4,
-      "2": 0.2,
-      "1": 0.1,
-      "0": 0.0
-    },
-    "屏東市": {
-      "6": 1.0,
-      "5": 1.0,
-      "4": 0.5,
-      "3": 0.5,
-      "2": 0.0,
-      "1": 0.0,
-      "0": 0.0
-    }
-  };
-
-  const getGrade = (id) => document.getElementById(id).value;
-  const scoreMap = gradeValueMap[city];
-  const writingMap = writingBonusMap[city] || {};
-
-  let total =
-    scoreMap[getGrade("chinese")] +
-    scoreMap[getGrade("english")] +
-    scoreMap[getGrade("math")] +
-    scoreMap[getGrade("science")] +
-    scoreMap[getGrade("social")];
-
-  if (writingMap) {
-    const writingGrade = getGrade("writing");
-    if (writingMap.hasOwnProperty(writingGrade)) {
-      total += writingMap[writingGrade];
-    }
+  const rule = cityRules[city];
+  let total = 0;
+  for (let subject in scores) {
+    total += rule[scores[subject]] || 0;
   }
+  total += rule.writing[writing];
 
-  // 清空原本的顯示結果
-  ["safe", "risky", "danger"].forEach((id) => {
-    document.querySelector(`#${id} ul`).innerHTML = "";
+  const schools = window.SCHOOL_DATA || [];
+  const safe = [], risky = [], danger = [];
+
+  schools.forEach(school => {
+    if (school.city !== city) return;
+    const diff = total - school.score;
+    if (diff >= 3) safe.push(school.name);
+    else if (diff >= 0) risky.push(school.name);
+    else if (diff >= -3) danger.push(school.name);
   });
 
-  // 載入資料
-  let schools;
-  try {
-    const res = await fetch("data/schools.json");
-    schools = await res.json();
-  } catch (err) {
-    alert("無法載入學校資料");
-    return;
-  }
+  document.querySelector("#safe ul").innerHTML = safe.map(name => `<li>${name}</li>`).join("");
+  document.querySelector("#risky ul").innerHTML = risky.map(name => `<li>${name}</li>`).join("");
+  document.querySelector("#danger ul").innerHTML = danger.map(name => `<li>${name}</li>`).join("");
 
-  const filtered = schools.filter((s) => s.city === city);
+  const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSde06ipoJ13R9ScEkmzZcqxuo-FfH7ZvvYbO3F12GF_J13sow/formResponse";
+  const formData = new FormData();
+  formData.append("entry.1443068889", name);
+  formData.append("entry.135201981", phone);
+  formData.append("entry.977897966", chinese);
+  formData.append("entry.1550956144", english);
+  formData.append("entry.1358965558", math);
+  formData.append("entry.1044822364", science);
+  formData.append("entry.630863529", social);
+  formData.append("entry.523532941", writing);
+  formData.append("entry.1905645741", city);
+  formData.append("entry.1640508304", safe.join(", "));
+  formData.append("entry.1852642474", risky.join(", "));
+  formData.append("entry.748458775", danger.join(", "));
 
-  filtered.forEach((school) => {
-    const diff = total - school.expected_score;
-
-    // 若差距太大（考生分數低於預估錄取超過3分），就不顯示
-    if (diff < -3) return;
-
-    const li = document.createElement("li");
-    li.textContent = `${school.school}`;
-
-    if (diff >= 3) {
-      document.querySelector("#safe ul").appendChild(li);
-    } else if (diff >= 0) {
-      document.querySelector("#risky ul").appendChild(li);
-    } else {
-      document.querySelector("#danger ul").appendChild(li);
-    }
+  fetch(formUrl, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData,
   });
 });
