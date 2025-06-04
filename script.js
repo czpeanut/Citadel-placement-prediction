@@ -52,44 +52,43 @@ document.getElementById("score-form").addEventListener("submit", async function 
 
   const filtered = schools.filter((s) => s.city === city);
 
-  // 判斷是否為全A++ + 作文6分
-  const isPerfect =
-    getGrade("chinese") === "A++" &&
-    getGrade("english") === "A++" &&
-    getGrade("math") === "A++" &&
-    getGrade("science") === "A++" &&
-    getGrade("social") === "A++" &&
-    parseInt(getGrade("writing")) === 6;
-
   const safeList = [];
   const riskyList = [];
   const dangerList = [];
 
-  if (isPerfect) {
-    filtered.forEach((school) => {
-      const li = document.createElement("li");
-      li.textContent = school.school;
+  // 判斷是否為「完美條件」
+  const allGrades = [
+    getGrade("chinese"),
+    getGrade("english"),
+    getGrade("math"),
+    getGrade("science"),
+    getGrade("social")
+  ];
+  const isPerfect = allGrades.every(g => g === "A++") && getGrade("writing") === "6";
+
+  filtered.forEach((school) => {
+    const li = document.createElement("li");
+    li.textContent = school.school;
+
+    if (isPerfect) {
       document.querySelector("#safe ul").appendChild(li);
       safeList.push(school.school);
-    });
-  } else {
-    filtered.forEach((school) => {
-      const diff = total - school.expected_score;
-      const li = document.createElement("li");
-      li.textContent = school.school;
+      return;
+    }
 
-      if (diff >= 3) {
-        document.querySelector("#safe ul").appendChild(li);
-        safeList.push(school.school);
-      } else if (diff >= 0) {
-        document.querySelector("#risky ul").appendChild(li);
-        riskyList.push(school.school);
-      } else if (diff > -3) {
-        document.querySelector("#danger ul").appendChild(li);
-        dangerList.push(school.school);
-      }
-    });
-  }
+    const diff = total - school.expected_score;
+
+    if (diff >= 3) {
+      document.querySelector("#safe ul").appendChild(li);
+      safeList.push(school.school);
+    } else if (diff >= 0) {
+      document.querySelector("#risky ul").appendChild(li);
+      riskyList.push(school.school);
+    } else if (diff > -3) {
+      document.querySelector("#danger ul").appendChild(li);
+      dangerList.push(school.school);
+    }
+  });
 
   document.getElementById("result").style.display = "block";
 
