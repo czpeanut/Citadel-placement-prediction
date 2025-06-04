@@ -25,13 +25,17 @@ document.getElementById("score-form").addEventListener("submit", async function 
   }
 
   const scoreMap = gradeValue[city];
+  const writingMap = writingValue[city] || {};
+  const writingScore = parseInt(getGrade("writing"));
+  const writingBonus = writingMap[writingScore] ?? 0;
+
   const total =
     scoreMap[getGrade("chinese")] +
     scoreMap[getGrade("english")] +
     scoreMap[getGrade("math")] +
     scoreMap[getGrade("science")] +
     scoreMap[getGrade("social")] +
-    (writingValue[city]?.[getGrade("writing")] ?? 0);
+    writingBonus;
 
   // 清除舊結果
   ["safe", "risky", "danger"].forEach((id) => {
@@ -48,28 +52,31 @@ document.getElementById("score-form").addEventListener("submit", async function 
     return;
   }
 
-  const filtered = schools.filter((s) => s.縣市 === city);
+  const filtered = schools.filter((s) => s.city === city);
 
   const safeList = [];
   const riskyList = [];
   const dangerList = [];
 
   filtered.forEach((school) => {
-    const diff = total - school.預估錄取分數;
+    const diff = total - school.expected_score;
     const li = document.createElement("li");
-    li.textContent = school.學校;
+    li.textContent = school.school;
 
     if (diff >= 3) {
       document.querySelector("#safe ul").appendChild(li);
-      safeList.push(school.學校);
+      safeList.push(school.school);
     } else if (diff >= 0) {
       document.querySelector("#risky ul").appendChild(li);
-      riskyList.push(school.學校);
+      riskyList.push(school.school);
     } else if (diff > -3) {
       document.querySelector("#danger ul").appendChild(li);
-      dangerList.push(school.學校);
+      dangerList.push(school.school);
     }
   });
+
+  // 顯示分析結果區塊
+  document.getElementById("result").style.display = "block";
 
   // 傳送至 Google 表單
   const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSde06ipoJ13R9ScEkmzZcqxuo-FfH7ZvvYbO3F12GF_J13sow/formResponse";
