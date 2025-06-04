@@ -45,7 +45,7 @@ document.getElementById("score-form").addEventListener("submit", async function 
   // 載入學校資料
   let schools;
   try {
-    const res = await fetch("schools.json");
+    const res = await fetch("data/schools.json");
     schools = await res.json();
   } catch (err) {
     alert("無法載入學校資料");
