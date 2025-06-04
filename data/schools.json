@@ -84,5 +84,10 @@
   { "school": "沙鹿高工", "city": "台中市", "expected_score": 20 },
   { "school": "龍津高中", "city": "台中市", "expected_score": 20 },
   { "school": "中港高中", "city": "台中市", "expected_score": 20 },
-  { "school": "后綜高中", "city": "台中市", "expected_score": 18 }
+  { "school": "后綜高中", "city": "台中市", "expected_score": 18 },
+  { "school": "羅東高中", "city": "宜蘭市", "expected_score": 13.4 },
+  { "school": "宜蘭高中", "city": "宜蘭市", "expected_score": 11 },
+  { "school": "蘭陽女中", "city": "宜蘭市", "expected_score": 11.5 },
+  { "school": "宜蘭高商", "city": "宜蘭市", "expected_score": 12.5 }
+  { "school": "屏東高中", "city": "屏東市", "expected_score": 12.5 }
 ]
