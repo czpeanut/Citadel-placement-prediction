@@ -106,7 +106,7 @@
       <button type="submit">開始分析</button>
     </form>
 
-    <div id="result">
+    <div id="result" style="display:none;">
       <h2>分析結果</h2>
       <div class="result-section" id="safe">
         <h3>✅ 安全學校</h3>
@@ -128,6 +128,13 @@
       技術提供：Ian Lin</p>
     </footer>
   </div>
+
+  <script>
+    // 讓結果區塊在提交後顯示出來
+    document.getElementById("score-form").addEventListener("submit", function() {
+      document.getElementById("result").style.display = "block";
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>
