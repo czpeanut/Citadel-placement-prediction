@@ -80,6 +80,24 @@ button:hover {
   padding-left: 20px;
 }
 
+/* LOGO區塊樣式 */
+#partner-logos {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#partner-logos .logo {
+  width: 100px;
+  height: auto;
+  margin: 0 10px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+#partner-logos .logo:hover {
+  transform: scale(1.1);
+}
+
 @media (max-width: 600px) {
   .container {
     margin: 20px;
@@ -88,5 +106,10 @@ button:hover {
 
   button {
     font-size: 14px;
+  }
+
+  #partner-logos .logo {
+    width: 60px;
+    margin: 5px;
   }
 }
